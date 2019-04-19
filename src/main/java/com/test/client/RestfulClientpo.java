@@ -45,7 +45,7 @@ public class RestfulClientpo {
         httpPost.setEntity(new UrlEncodedFormEntity(params, "utf-8"));
 
         
-        //设置头部信息
+        ////设置头部信息
 //        Set<String> set = headers.keySet();
 //        for(Iterator<String> iterator = set.iterator(); iterator.hasNext();){
 //            String key = iterator.next();
