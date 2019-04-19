@@ -5,6 +5,7 @@ import java.text.ParseException;
 import java.util.HashMap;
 import java.util.Iterator;
 import java.util.List;
+import java.util.Map;
 import java.util.Set;
 
 import org.apache.http.Header;
@@ -15,6 +16,7 @@ import org.apache.http.client.entity.UrlEncodedFormEntity;
 import org.apache.http.client.methods.CloseableHttpResponse;
 import org.apache.http.client.methods.HttpGet;
 import org.apache.http.client.methods.HttpPost;
+import org.apache.http.entity.StringEntity;
 import org.apache.http.impl.client.CloseableHttpClient;
 import org.apache.http.impl.client.HttpClients;
 import org.apache.http.util.EntityUtils;
@@ -31,7 +33,7 @@ public class RestfulClientpo {
     JSONObject responseBody;
     HashMap<String, String> responseHeads;
     
-  //通过httpclient获取post请求的反馈
+//  //通过httpclient获取post请求的反馈
     public void sendPost(String url1, List<NameValuePair> params, HashMap<String, String> headers) throws ClientProtocolException, IOException{
     	
     	httpclient = HttpClients.createDefault();
@@ -39,17 +41,22 @@ public class RestfulClientpo {
         httpPost = new HttpPost(url1);
 
         //设置请求主体格式
-        httpPost.setEntity(new UrlEncodedFormEntity(params, "UTF-8"));
+        //httpPost.setEntity(new UrlEncodedFormEntity(params, "UTF-8"));
+        httpPost.setEntity(new UrlEncodedFormEntity(params, "utf-8"));
+
         
         //设置头部信息
-        Set<String> set = headers.keySet();
-        for(Iterator<String> iterator = set.iterator(); iterator.hasNext();){
-            String key = iterator.next();
-            String value = headers.get(key);
-            httpPost.addHeader(key, value);
-        }
+//        Set<String> set = headers.keySet();
+//        for(Iterator<String> iterator = set.iterator(); iterator.hasNext();){
+//            String key = iterator.next();
+//            String value = headers.get(key);
+//            httpPost.addHeader(key, value);
+//        }
         httpResponse = httpclient.execute(httpPost);
     }
+    
+    
+    
     
   //以JSON格式获取到反馈的主体
     public JSONObject getBodyInJSON() throws ParseException, IOException{

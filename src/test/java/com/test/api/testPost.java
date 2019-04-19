@@ -41,8 +41,8 @@ public class testPost {
 
       //用NameValuePair的list来添加请求主体参数
       List<NameValuePair> params = new ArrayList<NameValuePair>();
-      params.add(new BasicNameValuePair("apiKey", "anJBypUde088834d600f358ec0136b805aff3f51ff2660d"));
-      params.add(new BasicNameValuePair("phoneNum", "15800732429"));
+      params.add(new BasicNameValuePair("apiKey","anJBypUde088834d600f358ec0136b805aff3f51ff2660d"));
+      params.add(new BasicNameValuePair("phoneNum","15800732429"));
       
       //用哈希图准备请求头部信息
       HashMap<String, String> hashHead = new HashMap<String, String>();
