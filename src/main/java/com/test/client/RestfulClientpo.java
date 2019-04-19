@@ -33,7 +33,7 @@ public class RestfulClientpo {
     JSONObject responseBody;
     HashMap<String, String> responseHeads;
     
-//  //通过httpclient获取post请求的反馈
+//  //1通过httpclient获取post请求的反馈
     public void sendPost(String url1, List<NameValuePair> params, HashMap<String, String> headers) throws ClientProtocolException, IOException{
     	
     	httpclient = HttpClients.createDefault();
